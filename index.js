@@ -7,7 +7,9 @@ const app = express();
 const { Builder, By, Key, until } = require("selenium-webdriver");
 const webdriver = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
-const firefox = require("selenium-webdriver/firefox");
+const chromedriver = require("chromedriver");
+
+chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
 
 app.get("/", (req, res) => {
   let driver = new webdriver.Builder().forBrowser("chrome").build();
