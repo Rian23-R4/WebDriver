@@ -4,15 +4,19 @@ var PORT = process.env.PORT || 3000;
 const express = require('express');
 const app = express();
 
+const webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const firefox = require('selenium-webdriver/firefox');
 
-const {Builder, By, Key, until} = require('selenium-webdriver');
-// var webdriver = require('selenium-webdriver');
-// var By = webdriver.By;
+let driver = new webdriver.Builder()
+    .forBrowser('firefox')
+    .setChromeOptions(/* ... */)
+    .setFirefoxOptions(/* ... */)
+    .build();
+
 
 app.get('/', (req,res) => {
-	var driver = new Builder()
+	var driver = new webdriver.Builder()
         .forBrowser('chrome')
         .build();
     driver.get('http://www.google.com/');
