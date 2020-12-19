@@ -12,16 +12,16 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 // var By = webdriver.By;
 
 app.get('/', (req,res) => {
-	var driver = await new Builder()
+	var driver = new Builder()
         .forBrowser('chrome')
         .build();
-    await driver.get('http://www.google.com/');
+    driver.get('http://www.google.com/');
     try {
-        await driver.get('http://www.google.com/ncr');
-        await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
-        await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+        driver.get('http://www.google.com/ncr');
+        driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
+        driver.wait(until.titleIs('webdriver - Google Search'), 1000);
       } finally {
-        await driver.quit();
+        driver.quit();
     
 });
 
