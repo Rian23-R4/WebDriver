@@ -15,7 +15,7 @@ options.addArguments(
   "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36"
 );
 
-app.get("/url/:data", async function (req, res) {
+app.get("/", async function (req, res) {
   let driver = new webdriver.Builder()
     .forBrowser("chrome")
     .setChromeOptions(options)
@@ -26,11 +26,11 @@ app.get("/url/:data", async function (req, res) {
     res.send(source);
   });
   //await driver.getTitle().then(function(title) { res.send(title); });
-  console.log("istek geldi.");
+  console.log("Selesai.");
 });
 
 app.listen(PORT, function () {
-  console.log("sunucu calisiyor");
+  console.log("Server running");
 });
 
 //
