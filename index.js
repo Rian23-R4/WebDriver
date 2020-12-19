@@ -22,7 +22,7 @@ app.get("/url/:data", async function (req, res) {
     .setChromeOptions(options)
     .setChromeService(serviceBuilder)
     .build();
-  await driver.get(text);
+  await driver.get("http://www.google.com/");
   await driver.getPageSource().then(function (source) {
     res.send(source);
   });
