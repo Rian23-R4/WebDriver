@@ -13,8 +13,11 @@ chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
 
 app.get("/", (req, res) => {
   let driver = new webdriver.Builder().forBrowser("chrome").build();
-  driver.get("http://www.google.com/");
-  driver.quit();
+  try {
+    driver.get("http://www.google.com/");
+  } finally {
+    driver.quit();
+  }
 });
 
 //start LISTEN AT PORT:
