@@ -5,7 +5,7 @@ var app = express()
 var port = process.env.PORT || 14000;
 var By = webdriver.By;
 
-app.get('/test', function (req, res) {
+app.get('/', function (req, res) {
     var driver = new webdriver.Builder()
         .forBrowser('phantomjs')
         .build();
