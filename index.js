@@ -9,24 +9,16 @@ const chrome = require('selenium-webdriver/chrome');
 const firefox = require('selenium-webdriver/firefox');
 
 let driver = new webdriver.Builder()
-    .forBrowser('firefox')
+    .forBrowser('chrome')
     .setChromeOptions(/* ... */)
     .setFirefoxOptions(/* ... */)
     .build();
 
 
 app.get('/', (req,res) => {
-	var driver = new webdriver.Builder()
-        .forBrowser('chrome')
-        .build();
     driver.get('http://www.google.com/');
-    try {
-        driver.get('http://www.google.com/ncr');
-        driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
-        driver.wait(until.titleIs('webdriver - Google Search'), 1000);
-      } finally {
-        driver.quit();
-      }
+   
+    driver.quit();
 });
 
 //start LISTEN AT PORT:
