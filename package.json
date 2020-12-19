@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "selenium-webdriver": "^3.4.0"
+    "selenium-webdriver": "^v4.0.0-alpha.8"
   },
   "engines": {
     "node": "14.15.1",
