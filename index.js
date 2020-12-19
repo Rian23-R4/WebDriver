@@ -8,8 +8,8 @@ const chrome = require('selenium-webdriver/chrome');
 const firefox = require('selenium-webdriver/firefox');
 
 const {Builder, By, Key, until} = require('selenium-webdriver');
-var webdriver = require('selenium-webdriver');
-var By = webdriver.By;
+// var webdriver = require('selenium-webdriver');
+// var By = webdriver.By;
 
 app.get('/', (req,res) => {
 	var driver = new webdriver.Builder()
