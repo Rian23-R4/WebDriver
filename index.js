@@ -10,8 +10,7 @@ const firefox = require('selenium-webdriver/firefox');
 
 let driver = new webdriver.Builder()
     .forBrowser('chrome')
-    .setChromeOptions(/* ... */)
-    .setFirefoxOptions(/* ... */)
+    .usingServer('http://localhost:4444/wd/hub')
     .build();
 
 
