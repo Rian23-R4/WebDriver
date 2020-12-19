@@ -12,23 +12,17 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 // var By = webdriver.By;
 
 app.get('/', (req,res) => {
-	var driver = new webdriver.Builder()
+	var driver = await new Builder()
         .forBrowser('chrome')
         .build();
-    driver.get('http://www.google.com/');
-    // driver.findElement(By.name('q')).sendKeys('webdriver');
-    // driver.findElement(By.name('btnG')).click();
-    // driver.wait(function() {
-    //     return driver.getTitle().then(function(title) {
-    //         console.log(title);
-    //         return title === 'webdriver - Google Search';
-    //     });
-    // }, 5000).then(function() {
-    //     res.status(200).send('Done');
-    // }, function(error) {
-    //     res.status(200).send(error);
-    // });
-    driver.quit();
+    await driver.get('http://www.google.com/');
+    try {
+        await driver.get('http://www.google.com/ncr');
+        await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
+        await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+      } finally {
+        await driver.quit();
+    
 });
 
 //start LISTEN AT PORT:
