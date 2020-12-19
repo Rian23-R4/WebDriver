@@ -5,7 +5,6 @@ const webdriver = require("selenium-webdriver");
 
 var app = express();
 chrome = require("selenium-webdriver/chrome");
-var sleep = require("sleep-promise");
 let options = new chrome.Options();
 options.setChromeBinaryPath(process.env.CHROME_BINARY_PATH);
 let serviceBuilder = new chrome.ServiceBuilder(process.env.CHROME_DRIVER_PATH);
