@@ -22,7 +22,7 @@ app.get('/', (req,res) => {
         driver.wait(until.titleIs('webdriver - Google Search'), 1000);
       } finally {
         driver.quit();
-    
+      }
 });
 
 //start LISTEN AT PORT:
