@@ -1,8 +1,7 @@
-var webdriver = require('selenium-webdriver');
-var express = require('express')
-var app = express()
+const webdriver = require('selenium-webdriver');
+const express = require('express');
 
-var port = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 var By = webdriver.By;
 
 app.get('/', (req,res) => {
@@ -29,6 +28,6 @@ app.get('/', (req,res) => {
 //     driver.quit();
 // });
 
-app.listen(port, function () {
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-})
+app.listen(PORT, function () {
+	console.log('Server running');
+});
