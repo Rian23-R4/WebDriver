@@ -9,7 +9,7 @@ var webdriver = require('selenium-webdriver');
 
 app.get('/', (req,res) => {
 	var driver = new webdriver.Builder()
-        .forBrowser('phantomjs')
+        .forBrowser('firefox')
         .build();
     driver.get('http://www.google.com/');
     // driver.findElement(By.name('q')).sendKeys('webdriver');
