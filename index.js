@@ -1,8 +1,9 @@
 const webdriver = require('selenium-webdriver');
 const express = require('express');
+const  app = express();
 
 var PORT = process.env.PORT || 3000;
-var By = webdriver.By;
+// var By = webdriver.By;
 
 app.get('/', (req,res) => {
 	res.send('BySonics Home Base Server');
