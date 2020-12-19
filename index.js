@@ -2,7 +2,7 @@ var webdriver = require('selenium-webdriver');
 var express = require('express')
 var app = express()
 
-var port = process.env.PORT || 14000;
+var port = process.env.PORT || 3000;
 var By = webdriver.By;
 
 app.get('/', function (req, res) {
