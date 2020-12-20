@@ -18,11 +18,11 @@ options.addArguments(
 app.get("/", async function (req, res) {
   res.send("BySonics Home Base Server");
 
-  // let driver = new webdriver.Builder()
-  //   .forBrowser("chrome")
-  //   .setChromeOptions(options)
-  //   .setChromeService(serviceBuilder)
-  //   .build();
+  let driver = new webdriver.Builder()
+    .forBrowser("chrome")
+    .setChromeOptions(options)
+    .setChromeService(serviceBuilder)
+    .build();
   // await driver.get("http://www.google.com/");
   // await driver.getPageSource().then(function (source) {
   //   res.send(source);
