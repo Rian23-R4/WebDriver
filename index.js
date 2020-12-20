@@ -16,6 +16,6 @@ app.use("/", async function (req, res) {
 
 const server = http.createServer(app);
 
-server.listen(PORT, function () {
+app.listen(PORT, function () {
   console.log("Server running");
 });
