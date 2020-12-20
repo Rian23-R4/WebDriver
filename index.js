@@ -16,17 +16,19 @@ options.addArguments(
 );
 
 app.get("/", async function (req, res) {
-  let driver = new webdriver.Builder()
-    .forBrowser("chrome")
-    .setChromeOptions(options)
-    .setChromeService(serviceBuilder)
-    .build();
-  await driver.get("http://www.google.com/");
-  await driver.getPageSource().then(function (source) {
-    res.send(source);
-  });
-  //await driver.getTitle().then(function(title) { res.send(title); });
-  console.log("Selesai.");
+  res.send("BySonics Home Base Server");
+
+  // let driver = new webdriver.Builder()
+  //   .forBrowser("chrome")
+  //   .setChromeOptions(options)
+  //   .setChromeService(serviceBuilder)
+  //   .build();
+  // await driver.get("http://www.google.com/");
+  // await driver.getPageSource().then(function (source) {
+  //   res.send(source);
+  // });
+  // //await driver.getTitle().then(function(title) { res.send(title); });
+  // console.log("Selesai.");
 });
 
 app.listen(PORT, function () {
