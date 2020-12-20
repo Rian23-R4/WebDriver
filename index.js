@@ -1,16 +1,22 @@
 var PORT = process.env.PORT || 3000;
 
+const http = require("http");
 const express = require("express");
+const path = require("path");
+
 var app = express();
+app.use(express.json());
+app.use(express.static("express"));
 
 const fs = require("fs");
 
-app.get("/", async function (req, res) {
+app.use("/", async function (req, res) {
   res.send("Hello Wolrd");
-  res.writeHead(200, { "content-type": "text/html" });
-  fs.createReadStream("index.html").pipe(res);
+  res.sendFile(path.join(__dirname + "/express/index.html"));
 });
 
-app.listen(PORT, function () {
+const server = http.createServer(app);
+
+server.listen(PORT, function () {
   console.log("Server running");
 });
