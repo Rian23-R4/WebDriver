@@ -11,7 +11,6 @@ app.use(express.static("express"));
 const fs = require("fs");
 
 app.use("/", async function (req, res) {
-  res.send("Hello Wolrd");
   res.sendFile(path.join(__dirname + "/index.html"));
 });
 
